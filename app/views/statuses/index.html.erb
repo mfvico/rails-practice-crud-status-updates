@@ -1,0 +1,21 @@
+<%= notice %>
+
+<table>
+  <thead>
+    <th>Status</th>
+    <th>User</th>
+    <th>Likes</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @statuses.each do |status| %>
+      <tr>
+        <td><%= status.status %></td>
+        <td><%= status.user %></td>
+        <td><%= status.likes %></td>
+        <td><%= link_to "Show", status_path(status) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Status", new_status_path %>

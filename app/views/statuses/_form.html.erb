@@ -1,0 +1,26 @@
+<h1><%= title %></h1>
+<% if @status.errors.any? %>
+
+      <h4><%= pluralize(@status.errors.count, "error") %> prohibited this task from being saved:</h4>
+      <ul>
+      <% @status.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+<% end %>
+
+
+<%= form_for @status do |f| %>
+
+  <%= f.label :status %>
+  <%= f.text_area :status %>
+
+  <%= f.label :user %>
+  <%= f.text_field :user %>
+
+  <%= f.label :likes %>
+  <%= f.text_field :likes %>
+
+  <%= f.submit %>
+
+<% end %>
